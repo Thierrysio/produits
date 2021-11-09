@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+ {% block body %}
+
+{% for unepromotion in lespromotions %}
+<table>
+  <tr>
+    <th>ID d la promotion</th> 
+  </tr>
+  <tr>
+    <td> promotion n° {{ unepromotion.getId() }}</td>  
+  </tr>
+  <table>
+  <tr>
+    <th>ID de la ligne  promotionnelle</th>
+    <th>ID du produit</th>
+
+      </tr>
+{% for unelignepromotion in unepromotion.getLeslignes() %}
+  <tr>
+    <td> ligne n° {{ unelignepromotion.getId() }}</td>  
+    <td> produit n° {{ unelignepromotion.getLeproduit().getId() }}</td>  
+    <td><a href= "/produit/afficherleproduit/{{ unelignepromotion.getLeproduit().getId() }}">
+    <button>detail</button></td>
+  </tr>
+  {% endfor %} 
+</table>
+ {% endfor %} 
+</table>
+
+        {% endblock %}

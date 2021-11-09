@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+ {% block body %}
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Famille</th>
+  </tr>
+{% for unproduit in lesproduits %}
+  <tr>
+    <td>{{ unproduit.getId() }}</td>
+    <td>{{ unproduit.getLafamille().getId() }}</td> 
+  </tr>
+ {% endfor %} 
+</table>
+        {% endblock %}
